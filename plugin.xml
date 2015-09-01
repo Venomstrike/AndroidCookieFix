@@ -1,0 +1,30 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="de.venom.acf"
+        version="1.0.0">
+
+  <name>AndroidCookieFix</name>
+
+  <engines>
+    <engine name="cordova" version=">=4.1.2"/>
+  </engines>
+
+  <asset src="www/AndroidCookieFix.js" target="js/AndroidCookieFix.js"/>
+
+  <js-module src="www/AndroidCookieFix.js" name="AndroidCookieFix">
+    <clobbers target="AndroidCookieFix" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/AndroidCookieFix.xml" parent="/*">
+      <feature name="AndroidCookieFix">
+        <param name="android-package" value="AndroidCookieFix"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/AndroidCookieFix.java" target-dir="src/venomplugin/AndroidCookieFix"/>
+  </platform>
+
+</plugin>
