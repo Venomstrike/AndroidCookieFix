@@ -1,1 +1,24 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="de.venom.acf"
+    version="1.0.0">
+    <name>AndroidCookieFix</name>
+    <description>Fixes the Cookie cahce for android</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, android, cookie, cache</keywords>
+    <repo></repo>
+    <issue></issue>
+    <js-module src="www/AndroidCookieFix.js" name="AndroidCookieFix">
+        <clobbers target="AndroidCookieFix" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AndroidCookieFix" >
+                <param name="android-package" value="AndroidCookieFix"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/AndroidCookieFix.java" target-dir="src/" />
+    </platform>
+</plugin>
